@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <% for (var css in htmlWebpackPlugin.files.css) { %>
+  <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css[css] %>">
+  <% } %>
+</head>
+<body>
+    <main class="main">
+      <div class="wrapper">
+        <!-- header START -->
+        <header class="header">
+          <h1>UsersApp</h1>
+
+          <!-- filter START -->
+          <div class="filter" id="filter">
+            <i class="filter-icon" id="filter-icon">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16"
+              viewBox="0 0 16 16">
+                <path fill="#efb90b" d="M2 2h13v2l-5 5v7l-3-2v-5l-5-5z"></path>
+                <path fill="#efb90b" d="M2 0h13v1h-13v-1z"></path>
+              </svg>
+            </i>
+
+            <!-- filter dropdown START -->
+            <div class="filter-dropdown">
+                <form id="form" class="form">
+                  <div class="form-fields">
+                    <input class="form__input" type="text" name="name" placeholder="Name">
+                    <input class="form__input" type="text" name="username" placeholder="Username">
+                    <input class="form__input" type="text" name="email" placeholder="Email">
+                    <input class="form__input" type="text" name="phone" placeholder="Phone">
+                    <input class="form__input" type="text" name="website" placeholder="Website">
+                    <input class="form__input" type="text" name="company.name" placeholder="Company">
+                    <input class="form__input" type="text" name="company.catchPhrase" placeholder="Company Phrase">
+                    <input class="form__input" type="text" name="company.bs" placeholder="Company BS">
+                  </div>
+
+                  <div class="actions">
+                    <button id="form-reset" class="form__button" type="reset">Reset</button>
+                    <button id="form-cancel" class="form__button" type="reset">Cancel</button>
+                    <button id="form-apply" class="form__button" type="button">Apply</button>
+                  </div>
+                </form>
+            </div>
+            <!-- filter dropdown END -->
+          </div>
+          <!-- filter END -->
+        </header>
+        <!-- header END -->
+
+        <hr>
+
+        <!-- users list START -->
+        <ul class="cards"></ul>
+        <!-- users list END -->
+      </div>
+    </main>
+
+  <% for (var js in htmlWebpackPlugin.files.js) { %>
+  <script src="<%= htmlWebpackPlugin.files.js[js] %>"></script>
+  <% } %>
+</body>
+</html>

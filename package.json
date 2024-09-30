@@ -1,0 +1,68 @@
+{
+  "name": "webpack-starter",
+  "version": "1.0.0",
+  "description": "Webpack starter for HTML/CSS templates",
+  "main": "index.js",
+  "scripts": {
+    "lint": "npm run lint:styles; npm run lint:scripts",
+    "lint:styles": "stylelint src",
+    "lint:scripts": "eslint src",
+    "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.prod.js",
+    "start": "webpack serve --config webpack/webpack.config.dev.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EduardZubal/webpack-starter.git"
+  },
+  "keywords": [
+    "javascript",
+    "frontend",
+    "webpack",
+    "startkit",
+    "webdev",
+    "es6"
+  ],
+  "author": "Eduard Zubal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EduardZubal/webpack-starter/issues"
+  },
+  "homepage": "https://github.com/EduardZubal/webpack-starter#readme",
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/eslint-parser": "^7.25.1",
+    "@babel/plugin-transform-runtime": "^7.19.6",
+    "@babel/preset-env": "^7.25.4",
+    "babel-loader": "^9.2.1",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.7.3",
+    "css-minimizer-webpack-plugin": "^7.0.0",
+    "eslint": "^8.32.0",
+    "eslint-webpack-plugin": "^3.2.0",
+    "file-loader": "^6.2.0",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.7.2",
+    "postcss": "^8.4.21",
+    "postcss-loader": "^7.0.2",
+    "sass": "^1.57.1",
+    "sass-loader": "^16.0.2",
+    "stylelint-config-standard": "^29.0.0",
+    "stylelint-webpack-plugin": "^3.3.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "core-js": "^3.38.1",
+    "cssnano": "^7.0.6",
+    "normalize.css": "^8.0.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not IE 9-10"
+  ]
+}

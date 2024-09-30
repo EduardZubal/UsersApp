@@ -1,0 +1,51 @@
+@import "~normalize.css";
+@import "~/assets/styles/common/_variables.scss";
+@import "~/assets/styles/page.scss";
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url('./assets/fonts/OpenSans-Regular.ttf') format('ttf');
+  font-weight: 600;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: 'OpenSans', sans-serif;
+}
+
+body {
+  background-color: $black-color;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: $yellow-color;
+  text-decoration: none;
+}
+
+main,
+section,
+header {
+  width: 100%;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
