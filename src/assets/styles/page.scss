@@ -4,18 +4,18 @@
 
     .cards {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         gap: 20px;
         color: $white-color;
         margin-top: 25px;
 
-        @media (max-width: 1024px) {
-            grid-template-columns: repeat(2, 1fr);
-        }
+        // @media (max-width: 1024px) {
+        //     grid-template-columns: repeat(2, 1fr);
+        // }
 
-        @media (max-width: 600px) {
-            grid-template-columns: repeat(1, 1fr);
-        }
+        // @media (max-width: 600px) {
+        //     grid-template-columns: repeat(1, 1fr);
+        // }
 
         &__item {
             border: 1px solid $yellow-color;
@@ -41,20 +41,49 @@
             }
 
             .info-block {
-                margin-bottom: 10px;
-                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 40px;
+                padding-top: 60px;
                 background-color: $black-light-block-color;
                 border-radius: 4px;
 
                 &__item {
                     display: flex;
                     align-items: center;
-                    margin: 10px 0;
+                    margin-right: 20px;
 
                     span {
-                        min-width: 70px;
-                        padding-right: 10px;
+                        padding: 0 10px;
                     }
+
+                    label {
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+
+                        span {
+                            position: absolute;
+                            top: -25px;
+                            left: 0;
+                            padding-bottom: 10px;
+                            padding-left: 0;
+                        }
+                    }
+                }
+
+                .form-summa {
+                    width: 100%;
+                    max-width: 200px;
+                    font-size: 25px;
+                    color: $yellow-color;
+                    white-space: nowrap;
+                    overflow: scroll;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 5;
+                    -webkit-box-orient: vertical;
+                    padding-left: 15px;
                 }
             }
 

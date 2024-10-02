@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=1024, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="assets/images/binance-coin-cryptocurrency.svg">
   <title><%= htmlWebpackPlugin.options.title %></title>
   <% for (var css in htmlWebpackPlugin.files.css) { %>
   <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css[css] %>">
@@ -13,50 +14,88 @@
       <div class="wrapper">
         <!-- header START -->
         <header class="header">
-          <h1>UsersApp</h1>
-
-          <!-- filter START -->
-          <div class="filter" id="filter">
-            <i class="filter-icon" id="filter-icon">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16"
-              viewBox="0 0 16 16">
-                <path fill="#efb90b" d="M2 2h13v2l-5 5v7l-3-2v-5l-5-5z"></path>
-                <path fill="#efb90b" d="M2 0h13v1h-13v-1z"></path>
-              </svg>
-            </i>
-
-            <!-- filter dropdown START -->
-            <div class="filter-dropdown">
-                <form id="form" class="form">
-                  <div class="form-fields">
-                    <input class="form__input" type="text" name="name" placeholder="Name">
-                    <input class="form__input" type="text" name="username" placeholder="Username">
-                    <input class="form__input" type="text" name="email" placeholder="Email">
-                    <input class="form__input" type="text" name="phone" placeholder="Phone">
-                    <input class="form__input" type="text" name="website" placeholder="Website">
-                    <input class="form__input" type="text" name="company.name" placeholder="Company">
-                    <input class="form__input" type="text" name="company.catchPhrase" placeholder="Company Phrase">
-                    <input class="form__input" type="text" name="company.bs" placeholder="Company BS">
-                  </div>
-
-                  <div class="actions">
-                    <button id="form-reset" class="form__button" type="reset">Reset</button>
-                    <button id="form-cancel" class="form__button" type="reset">Cancel</button>
-                    <button id="form-apply" class="form__button" type="button">Apply</button>
-                  </div>
-                </form>
-            </div>
-            <!-- filter dropdown END -->
-          </div>
-          <!-- filter END -->
+          <h1>CryptoApp</h1>
         </header>
         <!-- header END -->
 
         <hr>
 
-        <!-- users list START -->
-        <ul class="cards"></ul>
-        <!-- users list END -->
+        <!-- cards list START -->
+        <ul class="cards">
+          <!-- Крипта в долар -->
+          <li class="cards__item">
+            <div class="title">Крипта в долар:</div>
+            <form id="crypto-to-form" class="info-block">
+              <div class="info-block__item">
+                <label>
+                  <span>Crypto</span>
+                  <input class="form__input" type="number" name="sum" placeholder="coins">
+                </label>
+
+                <span>*</span>
+
+                <label>
+                  <span>Crypto Price</span>
+                  <input class="form__input" type="number" name="rate" placeholder="price">
+                </label>
+              </div>
+
+              <span>=</span>
+              <span class="form-summa" id="oneFormSumma">$ 0.00000</span>
+            </form>
+          </li>
+
+          <!-- Долар в крипту -->
+          <li class="cards__item">
+            <div class="title">Долар в крипту:</div>
+            <form id="usd-to-form" class="info-block">
+              <div class="info-block__item">
+                <label>
+                  <span>USD</span>
+                  <input class="form__input" type="number" name="sum" placeholder="$">
+                </label>
+
+                <span>/</span>
+
+                <label>
+                  <span>Crypto Price</span>
+                  <input class="form__input" type="number" name="rate" placeholder="price">
+                </label>
+              </div>
+
+              <span>=</span>
+              <span class="form-summa" id="twoFormSumma">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20"
+                          height="20" viewBox="0 0 256 256" xml:space="preserve">
+
+                        <defs>
+                          </defs>
+                            <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
+                              transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+                              <path d="M 45 90 C 20.187 90 0 69.813 0 45 S 20.187 0 45 0 c 24.813 0 45 20.187 45 45 S 69.813 90 45 90 z"
+                                style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(228,173,74); fill-rule: nonzero; opacity: 1;"
+                                transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                              <path
+                                d="M 46.105 64.754 c -10.893 0 -19.754 -8.861 -19.754 -19.754 c 0 -10.893 8.862 -19.754 19.754 -19.754 c 4.912 0 9.622 1.815 13.26 5.112 c 1.228 1.113 1.321 3.01 0.208 4.238 c -1.111 1.228 -3.01 1.321 -4.237 0.208 c -2.532 -2.295 -5.811 -3.559 -9.23 -3.559 c -7.584 0 -13.754 6.17 -13.754 13.754 c 0 7.584 6.17 13.754 13.754 13.754 c 3.42 0 6.698 -1.264 9.23 -3.559 c 1.228 -1.112 3.126 -1.02 4.237 0.208 c 1.113 1.228 1.02 3.125 -0.208 4.237 C 55.728 62.939 51.019 64.754 46.105 64.754 z"
+                                style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"
+                                transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                              <path
+                                d="M 46.105 31.246 c -1.657 0 -3 -1.343 -3 -3 v -6.425 c 0 -1.657 1.343 -3 3 -3 c 1.657 0 3 1.343 3 3 v 6.425 C 49.105 29.903 47.763 31.246 46.105 31.246 z"
+                                style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"
+                                transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                              <path
+                                d="M 46.105 71.179 c -1.657 0 -3 -1.343 -3 -3 v -6.425 c 0 -1.657 1.343 -3 3 -3 c 1.657 0 3 1.343 3 3 v 6.425 C 49.105 69.836 47.763 71.179 46.105 71.179 z"
+                                style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"
+                                transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                            </g>
+                          </svg>
+                    </span>
+                <span>0.00000</span>
+            </form>
+          </li>
+        </ul>
+        <!-- cards list END -->
       </div>
     </main>
 
